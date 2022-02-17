@@ -503,7 +503,7 @@ namespace GCRebuilder
                 lblEndIdx.Text = "File length:";
             }
 
-            tbStartIdx.Text = toc.fils[idx].pos.ToString();
+            tbStartIdx.Text = String.Format("${0:X2}", toc.fils[idx].pos);
             tbEndIdx.Text = toc.fils[idx].len.ToString();
         }
 
