@@ -820,5 +820,9 @@ namespace GCRebuilder
             }
         }
 
+        private void gbStruct_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

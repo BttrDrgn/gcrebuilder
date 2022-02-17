@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.tvTOC = new System.Windows.Forms.TreeView();
             this.cmsTVTOC = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.miImport = new System.Windows.Forms.ToolStripMenuItem();
             this.miExport = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,14 +40,6 @@
             this.miRename = new System.Windows.Forms.ToolStripMenuItem();
             this.miCancel = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.gbStruct = new System.Windows.Forms.GroupBox();
-            this.tbEndIdx = new System.Windows.Forms.TextBox();
-            this.lblEndIdx = new System.Windows.Forms.Label();
-            this.tbStartIdx = new System.Windows.Forms.TextBox();
-            this.lblStartIdx = new System.Windows.Forms.Label();
-            this.gbSort = new System.Windows.Forms.GroupBox();
-            this.rbSortAddress = new System.Windows.Forms.RadioButton();
-            this.rbSortFileName = new System.Windows.Forms.RadioButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.sslblAction = new System.Windows.Forms.ToolStripStatusLabel();
             this.sspbProgress = new System.Windows.Forms.ToolStripProgressBar();
@@ -109,34 +100,25 @@
             this.tbIDName = new System.Windows.Forms.TextBox();
             this.lblIDName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tvTOC = new System.Windows.Forms.TreeView();
+            this.gbSort = new System.Windows.Forms.GroupBox();
+            this.rbSortFileName = new System.Windows.Forms.RadioButton();
+            this.rbSortAddress = new System.Windows.Forms.RadioButton();
+            this.lblStartIdx = new System.Windows.Forms.Label();
+            this.tbStartIdx = new System.Windows.Forms.TextBox();
+            this.lblEndIdx = new System.Windows.Forms.Label();
+            this.tbEndIdx = new System.Windows.Forms.TextBox();
+            this.gbStruct = new System.Windows.Forms.GroupBox();
             this.cmsTVTOC.SuspendLayout();
-            this.gbStruct.SuspendLayout();
-            this.gbSort.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.gbBannerDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBDBanner)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.gbISODetails.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.gbSort.SuspendLayout();
+            this.gbStruct.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tvTOC
-            // 
-            this.tvTOC.ContextMenuStrip = this.cmsTVTOC;
-            this.tvTOC.Enabled = false;
-            this.tvTOC.ImageIndex = 0;
-            this.tvTOC.ImageList = this.imageList;
-            this.tvTOC.Location = new System.Drawing.Point(9, 71);
-            this.tvTOC.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.tvTOC.Name = "tvTOC";
-            this.tvTOC.SelectedImageIndex = 0;
-            this.tvTOC.ShowNodeToolTips = true;
-            this.tvTOC.Size = new System.Drawing.Size(403, 331);
-            this.tvTOC.TabIndex = 8;
-            this.tvTOC.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.tvTOC_AfterLabelEdit);
-            this.tvTOC.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvTOC_AfterSelect);
-            this.tvTOC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tvTOC_KeyDown);
-            this.tvTOC.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tvTOC_MouseDown);
             // 
             // cmsTVTOC
             // 
@@ -150,7 +132,7 @@
             this.miRename,
             this.miCancel});
             this.cmsTVTOC.Name = "cmsTVTOC";
-            this.cmsTVTOC.Size = new System.Drawing.Size(165, 170);
+            this.cmsTVTOC.Size = new System.Drawing.Size(165, 148);
             this.cmsTVTOC.Opening += new System.ComponentModel.CancelEventHandler(this.cmsTVTOC_Opening);
             // 
             // miImport
@@ -219,106 +201,12 @@
             this.imageList.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // gbStruct
-            // 
-            this.gbStruct.Controls.Add(this.tbEndIdx);
-            this.gbStruct.Controls.Add(this.lblEndIdx);
-            this.gbStruct.Controls.Add(this.tbStartIdx);
-            this.gbStruct.Controls.Add(this.lblStartIdx);
-            this.gbStruct.Controls.Add(this.gbSort);
-            this.gbStruct.Controls.Add(this.tvTOC);
-            this.gbStruct.Location = new System.Drawing.Point(458, 11);
-            this.gbStruct.Name = "gbStruct";
-            this.gbStruct.Size = new System.Drawing.Size(421, 442);
-            this.gbStruct.TabIndex = 9;
-            this.gbStruct.TabStop = false;
-            this.gbStruct.Text = "Structure";
-            // 
-            // tbEndIdx
-            // 
-            this.tbEndIdx.Enabled = false;
-            this.tbEndIdx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.tbEndIdx.Location = new System.Drawing.Point(309, 408);
-            this.tbEndIdx.MaxLength = 4;
-            this.tbEndIdx.Name = "tbEndIdx";
-            this.tbEndIdx.ReadOnly = true;
-            this.tbEndIdx.Size = new System.Drawing.Size(103, 20);
-            this.tbEndIdx.TabIndex = 17;
-            // 
-            // lblEndIdx
-            // 
-            this.lblEndIdx.AutoSize = true;
-            this.lblEndIdx.Location = new System.Drawing.Point(236, 412);
-            this.lblEndIdx.Margin = new System.Windows.Forms.Padding(3);
-            this.lblEndIdx.Name = "lblEndIdx";
-            this.lblEndIdx.Size = new System.Drawing.Size(57, 13);
-            this.lblEndIdx.TabIndex = 16;
-            this.lblEndIdx.Text = "End index:";
-            // 
-            // tbStartIdx
-            // 
-            this.tbStartIdx.Enabled = false;
-            this.tbStartIdx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.tbStartIdx.Location = new System.Drawing.Point(79, 408);
-            this.tbStartIdx.MaxLength = 4;
-            this.tbStartIdx.Name = "tbStartIdx";
-            this.tbStartIdx.ReadOnly = true;
-            this.tbStartIdx.Size = new System.Drawing.Size(103, 20);
-            this.tbStartIdx.TabIndex = 15;
-            // 
-            // lblStartIdx
-            // 
-            this.lblStartIdx.AutoSize = true;
-            this.lblStartIdx.Location = new System.Drawing.Point(6, 412);
-            this.lblStartIdx.Margin = new System.Windows.Forms.Padding(3);
-            this.lblStartIdx.Name = "lblStartIdx";
-            this.lblStartIdx.Size = new System.Drawing.Size(60, 13);
-            this.lblStartIdx.TabIndex = 14;
-            this.lblStartIdx.Text = "Start index:";
-            // 
-            // gbSort
-            // 
-            this.gbSort.Controls.Add(this.rbSortAddress);
-            this.gbSort.Controls.Add(this.rbSortFileName);
-            this.gbSort.Location = new System.Drawing.Point(9, 19);
-            this.gbSort.Name = "gbSort";
-            this.gbSort.Size = new System.Drawing.Size(403, 45);
-            this.gbSort.TabIndex = 9;
-            this.gbSort.TabStop = false;
-            this.gbSort.Text = "Sort method";
-            // 
-            // rbSortAddress
-            // 
-            this.rbSortAddress.AutoSize = true;
-            this.rbSortAddress.Enabled = false;
-            this.rbSortAddress.Location = new System.Drawing.Point(199, 19);
-            this.rbSortAddress.Name = "rbSortAddress";
-            this.rbSortAddress.Size = new System.Drawing.Size(100, 17);
-            this.rbSortAddress.TabIndex = 1;
-            this.rbSortAddress.Text = "Addresses table";
-            this.rbSortAddress.UseVisualStyleBackColor = true;
-            this.rbSortAddress.CheckedChanged += new System.EventHandler(this.rbSortAddress_CheckedChanged);
-            // 
-            // rbSortFileName
-            // 
-            this.rbSortFileName.AutoSize = true;
-            this.rbSortFileName.Checked = true;
-            this.rbSortFileName.Enabled = false;
-            this.rbSortFileName.Location = new System.Drawing.Point(6, 19);
-            this.rbSortFileName.Name = "rbSortFileName";
-            this.rbSortFileName.Size = new System.Drawing.Size(101, 17);
-            this.rbSortFileName.TabIndex = 0;
-            this.rbSortFileName.TabStop = true;
-            this.rbSortFileName.Text = "File names table";
-            this.rbSortFileName.UseVisualStyleBackColor = true;
-            this.rbSortFileName.CheckedChanged += new System.EventHandler(this.rbSortFileName_CheckedChanged);
-            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sslblAction,
             this.sspbProgress});
-            this.statusStrip.Location = new System.Drawing.Point(0, 487);
+            this.statusStrip.Location = new System.Drawing.Point(0, 744);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(886, 22);
             this.statusStrip.SizingGrip = false;
@@ -699,7 +587,7 @@
             // 
             this.miImageOpen.Image = ((System.Drawing.Image)(resources.GetObject("miImageOpen.Image")));
             this.miImageOpen.Name = "miImageOpen";
-            this.miImageOpen.Size = new System.Drawing.Size(152, 22);
+            this.miImageOpen.Size = new System.Drawing.Size(147, 22);
             this.miImageOpen.Text = "Open…";
             this.miImageOpen.Click += new System.EventHandler(this.miImageOpen_Click);
             // 
@@ -708,34 +596,34 @@
             this.miImageClose.Enabled = false;
             this.miImageClose.Image = ((System.Drawing.Image)(resources.GetObject("miImageClose.Image")));
             this.miImageClose.Name = "miImageClose";
-            this.miImageClose.Size = new System.Drawing.Size(152, 22);
+            this.miImageClose.Size = new System.Drawing.Size(147, 22);
             this.miImageClose.Text = "Close";
             this.miImageClose.Click += new System.EventHandler(this.miImageClose_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(144, 6);
             // 
             // miImageWipeGarbage
             // 
             this.miImageWipeGarbage.Enabled = false;
             this.miImageWipeGarbage.Image = global::GCRebuilder.Properties.Resources.wipe;
             this.miImageWipeGarbage.Name = "miImageWipeGarbage";
-            this.miImageWipeGarbage.Size = new System.Drawing.Size(152, 22);
+            this.miImageWipeGarbage.Size = new System.Drawing.Size(147, 22);
             this.miImageWipeGarbage.Text = "Wipe garbage";
             this.miImageWipeGarbage.Click += new System.EventHandler(this.miImageWipeGarbage_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(144, 6);
             // 
             // miImageExit
             // 
             this.miImageExit.Image = global::GCRebuilder.Properties.Resources.exit;
             this.miImageExit.Name = "miImageExit";
-            this.miImageExit.Size = new System.Drawing.Size(152, 22);
+            this.miImageExit.Size = new System.Drawing.Size(147, 22);
             this.miImageExit.Text = "Exit";
             this.miImageExit.Click += new System.EventHandler(this.miImageExit_Click);
             // 
@@ -929,14 +817,127 @@
             this.panel1.Controls.Add(this.gbBannerDetails);
             this.panel1.Location = new System.Drawing.Point(-2, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(892, 482);
+            this.panel1.Size = new System.Drawing.Size(892, 714);
             this.panel1.TabIndex = 14;
+            // 
+            // tvTOC
+            // 
+            this.tvTOC.ContextMenuStrip = this.cmsTVTOC;
+            this.tvTOC.Enabled = false;
+            this.tvTOC.ImageIndex = 0;
+            this.tvTOC.ImageList = this.imageList;
+            this.tvTOC.Location = new System.Drawing.Point(9, 71);
+            this.tvTOC.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.tvTOC.Name = "tvTOC";
+            this.tvTOC.SelectedImageIndex = 0;
+            this.tvTOC.ShowNodeToolTips = true;
+            this.tvTOC.Size = new System.Drawing.Size(403, 601);
+            this.tvTOC.TabIndex = 8;
+            this.tvTOC.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.tvTOC_AfterLabelEdit);
+            this.tvTOC.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvTOC_AfterSelect);
+            this.tvTOC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tvTOC_KeyDown);
+            this.tvTOC.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tvTOC_MouseDown);
+            // 
+            // gbSort
+            // 
+            this.gbSort.Controls.Add(this.rbSortAddress);
+            this.gbSort.Controls.Add(this.rbSortFileName);
+            this.gbSort.Location = new System.Drawing.Point(9, 19);
+            this.gbSort.Name = "gbSort";
+            this.gbSort.Size = new System.Drawing.Size(403, 45);
+            this.gbSort.TabIndex = 9;
+            this.gbSort.TabStop = false;
+            this.gbSort.Text = "Sort method";
+            // 
+            // rbSortFileName
+            // 
+            this.rbSortFileName.AutoSize = true;
+            this.rbSortFileName.Checked = true;
+            this.rbSortFileName.Enabled = false;
+            this.rbSortFileName.Location = new System.Drawing.Point(6, 19);
+            this.rbSortFileName.Name = "rbSortFileName";
+            this.rbSortFileName.Size = new System.Drawing.Size(101, 17);
+            this.rbSortFileName.TabIndex = 0;
+            this.rbSortFileName.TabStop = true;
+            this.rbSortFileName.Text = "File names table";
+            this.rbSortFileName.UseVisualStyleBackColor = true;
+            this.rbSortFileName.CheckedChanged += new System.EventHandler(this.rbSortFileName_CheckedChanged);
+            // 
+            // rbSortAddress
+            // 
+            this.rbSortAddress.AutoSize = true;
+            this.rbSortAddress.Enabled = false;
+            this.rbSortAddress.Location = new System.Drawing.Point(199, 19);
+            this.rbSortAddress.Name = "rbSortAddress";
+            this.rbSortAddress.Size = new System.Drawing.Size(100, 17);
+            this.rbSortAddress.TabIndex = 1;
+            this.rbSortAddress.Text = "Addresses table";
+            this.rbSortAddress.UseVisualStyleBackColor = true;
+            this.rbSortAddress.CheckedChanged += new System.EventHandler(this.rbSortAddress_CheckedChanged);
+            // 
+            // lblStartIdx
+            // 
+            this.lblStartIdx.AutoSize = true;
+            this.lblStartIdx.Location = new System.Drawing.Point(6, 682);
+            this.lblStartIdx.Margin = new System.Windows.Forms.Padding(3);
+            this.lblStartIdx.Name = "lblStartIdx";
+            this.lblStartIdx.Size = new System.Drawing.Size(60, 13);
+            this.lblStartIdx.TabIndex = 14;
+            this.lblStartIdx.Text = "Start index:";
+            // 
+            // tbStartIdx
+            // 
+            this.tbStartIdx.Enabled = false;
+            this.tbStartIdx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.tbStartIdx.Location = new System.Drawing.Point(79, 678);
+            this.tbStartIdx.MaxLength = 4;
+            this.tbStartIdx.Name = "tbStartIdx";
+            this.tbStartIdx.ReadOnly = true;
+            this.tbStartIdx.Size = new System.Drawing.Size(103, 20);
+            this.tbStartIdx.TabIndex = 15;
+            // 
+            // lblEndIdx
+            // 
+            this.lblEndIdx.AutoSize = true;
+            this.lblEndIdx.Location = new System.Drawing.Point(236, 682);
+            this.lblEndIdx.Margin = new System.Windows.Forms.Padding(3);
+            this.lblEndIdx.Name = "lblEndIdx";
+            this.lblEndIdx.Size = new System.Drawing.Size(57, 13);
+            this.lblEndIdx.TabIndex = 16;
+            this.lblEndIdx.Text = "End index:";
+            // 
+            // tbEndIdx
+            // 
+            this.tbEndIdx.Enabled = false;
+            this.tbEndIdx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.tbEndIdx.Location = new System.Drawing.Point(309, 678);
+            this.tbEndIdx.MaxLength = 4;
+            this.tbEndIdx.Name = "tbEndIdx";
+            this.tbEndIdx.ReadOnly = true;
+            this.tbEndIdx.Size = new System.Drawing.Size(103, 20);
+            this.tbEndIdx.TabIndex = 17;
+            // 
+            // gbStruct
+            // 
+            this.gbStruct.Controls.Add(this.tbEndIdx);
+            this.gbStruct.Controls.Add(this.lblEndIdx);
+            this.gbStruct.Controls.Add(this.tbStartIdx);
+            this.gbStruct.Controls.Add(this.lblStartIdx);
+            this.gbStruct.Controls.Add(this.gbSort);
+            this.gbStruct.Controls.Add(this.tvTOC);
+            this.gbStruct.Location = new System.Drawing.Point(458, 11);
+            this.gbStruct.Name = "gbStruct";
+            this.gbStruct.Size = new System.Drawing.Size(421, 701);
+            this.gbStruct.TabIndex = 9;
+            this.gbStruct.TabStop = false;
+            this.gbStruct.Text = "Structure";
+            this.gbStruct.Enter += new System.EventHandler(this.gbStruct_Enter);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 509);
+            this.ClientSize = new System.Drawing.Size(886, 766);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.panel1);
@@ -945,14 +946,10 @@
             this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "GCRebuilder v1.1";
+            this.Text = "GCRebuilder v1.1 | GCN-Translations";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.cmsTVTOC.ResumeLayout(false);
-            this.gbStruct.ResumeLayout(false);
-            this.gbStruct.PerformLayout();
-            this.gbSort.ResumeLayout(false);
-            this.gbSort.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.gbBannerDetails.ResumeLayout(false);
@@ -963,14 +960,16 @@
             this.gbISODetails.ResumeLayout(false);
             this.gbISODetails.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.gbSort.ResumeLayout(false);
+            this.gbSort.PerformLayout();
+            this.gbStruct.ResumeLayout(false);
+            this.gbStruct.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TreeView tvTOC;
         private System.Windows.Forms.ImageList imageList;
         private System.Windows.Forms.ContextMenuStrip cmsTVTOC;
         private System.Windows.Forms.ToolStripMenuItem miImport;
@@ -980,7 +979,6 @@
         private System.Windows.Forms.ToolStripMenuItem miExpFT;
         private System.Windows.Forms.ToolStripSeparator misep2;
         private System.Windows.Forms.ToolStripMenuItem miRename;
-        private System.Windows.Forms.GroupBox gbStruct;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel sslblAction;
         private System.Windows.Forms.ToolStripProgressBar sspbProgress;
@@ -1034,21 +1032,23 @@
         private System.Windows.Forms.ToolStripMenuItem miOptions;
         private System.Windows.Forms.ToolStripMenuItem miHelp;
         private System.Windows.Forms.ToolStripMenuItem miHelpAbout;
-        private System.Windows.Forms.GroupBox gbSort;
-        private System.Windows.Forms.RadioButton rbSortAddress;
-        private System.Windows.Forms.RadioButton rbSortFileName;
         private System.Windows.Forms.ToolStripMenuItem miOptionsModifySystemFiles;
         private System.Windows.Forms.ToolStripMenuItem miOptionsDoNotUseGameToc;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem miImageExit;
         private System.Windows.Forms.ToolStripMenuItem miImageWipeGarbage;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.TextBox tbStartIdx;
-        private System.Windows.Forms.Label lblStartIdx;
-        private System.Windows.Forms.TextBox tbEndIdx;
-        private System.Windows.Forms.Label lblEndIdx;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem miCancel;
+        private System.Windows.Forms.GroupBox gbStruct;
+        private System.Windows.Forms.TextBox tbEndIdx;
+        private System.Windows.Forms.Label lblEndIdx;
+        private System.Windows.Forms.TextBox tbStartIdx;
+        private System.Windows.Forms.Label lblStartIdx;
+        private System.Windows.Forms.GroupBox gbSort;
+        private System.Windows.Forms.RadioButton rbSortAddress;
+        private System.Windows.Forms.RadioButton rbSortFileName;
+        private System.Windows.Forms.TreeView tvTOC;
     }
 }
 
